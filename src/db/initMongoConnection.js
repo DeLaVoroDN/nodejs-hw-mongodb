@@ -1,4 +1,4 @@
-// src/db/initMongoConnection.js
+//src/models/initMongoConnection
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 
@@ -16,7 +16,7 @@ const initMongoConnection = async () => {
     console.log('Mongo connection successfully established!');
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
-    process.exit(1); // Exit the process with failure
+    process.exit(1);
   }
 };
 
