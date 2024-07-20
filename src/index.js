@@ -1,9 +1,13 @@
 import { setupServer } from './server.js';
-import initMongoConnection from './db/initMongoConnection.js';
+import { initMongoConnection } from './db/initMongoConnection.js';
 
 const startServer = async () => {
-  await initMongoConnection();
-  setupServer();
+  try {
+    await initMongoConnection();
+    setupServer();
+  } catch (error) {
+    console.error('Failed to start server:', error);
+  }
 };
 
 startServer();
